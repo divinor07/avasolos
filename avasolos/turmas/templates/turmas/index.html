@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="pure-g-r content-ribbon">
+    <div class="pure-u-1">
+        <div class="l-box">
+            <h4 class="content-subhead">Listagem de Turmas do AVA Solos</h4>
+            <p>Abaixo a lista de turmas disponíveis na plataforma</p>
+        </div>
+    </div>
+</div>
+{% for turma in turmas %}
+<div class="pure-g-r content-ribbon">
+    <div class="pure-u-1-3">
+        <div class="l-box">
+            <a href="{{ turma.get_absolute_url }}">
+            {% if turma.image %}
+            <img src="{{ turma.image.url }}" alt="{{ turma.name }}" />
+            {% else %}
+            <img src="{% static 'img/turma-image.png' %}" alt="{{ turma.name }}" />
+            {% endif %}
+            </a>
+        </div>
+    </div>
+    <div class="pure-u-2-3">
+        <div class="l-box">
+            <h4 class="content-subhead"><a href="{{ turma.get_absolute_url }}" title="">{{ turma.name }}</a></h4>
+            {{ turma.description|linebreaks }}
+        </div>
+    </div>
+</div>
+{% empty %}
+<div class="pure-g-r content-ribbon">
+    <div class="pure-u-1">
+        <div class="l-box">
+            <p>Nenhuma turma está disponível na plataforma</p>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

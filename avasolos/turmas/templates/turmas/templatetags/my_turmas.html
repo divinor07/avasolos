@@ -1,0 +1,6 @@
+<li class="pure-menu-heading">Minhas Turmas</li>
+{% for enrollment in enrollments %}
+<li><a href="#">{{ enrollment.turma }}</a></li>
+{% empty %}
+<li>Nenhuma turma encontrada</li>
+{% endfor %}

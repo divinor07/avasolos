@@ -1,0 +1,47 @@
+<!doctype html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AVA Solos - Uma simples plataforma de ensino aprendizagem" />
+    <title>AVA Solos</title>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+</head>
+<body>
+<div class="header">
+    <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+        <a class="pure-menu-heading" href="{% url 'core:home' %}">AVA SOLOS</a>
+        <ul>
+            <li class="pure-menu-selected"><a href="{% url 'core:home' %}">Início</a></li>
+            <li><a href="{% url 'turmas:index' %}">Turmas</a></li>
+            <li><a href="{% url 'core:contact' %}">Contato</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'accounts:dashboard' %}">Painel</a></li>
+            <li><a href="{% url 'accounts:logout' %}">Sair</a></li>
+            {% else %}
+            <li><a href="{% url 'accounts:login' %}">Entrar</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</div>
+<div class="content">
+    {% if messages %}
+    <div class="pure-g-r content-ribbon">
+        <aside class="pure-u-1">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+        </aside>
+    </div>
+    {% endif %}
+    {% block content %}{% endblock %}
+    <div class="footer">
+        AVA Solos - Uma simples plataforma de ensino aprendizagem
+    </div>
+</div>
+<script src="http://yui.yahooapis.com/3.12.0/build/yui/yui-min.js"></script>
+</body>
+</html>
