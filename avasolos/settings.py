@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'avasolos.core',
     'avasolos.accounts',
     'avasolos.turmas',
+    'avasolos.forum',
 )
 
 MIDDLEWARE_CLASSES = (
