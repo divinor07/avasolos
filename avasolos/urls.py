@@ -9,7 +9,7 @@ urlpatterns = patterns('',
     url(r'^', include('avasolos.core.urls', namespace='core')),
     url(r'^conta/', include('avasolos.accounts.urls', namespace='accounts')),
     url(r'^turmas/', include('avasolos.turmas.urls', namespace='turmas')),
-    url(r'^forum/', include('avasolos.forum.urls', namespace='forum'))
+    url(r'^forum/', include('avasolos.forum.urls', namespace='forum')),
     url(r'^admin/', include(admin.site.urls)),
 )
 
