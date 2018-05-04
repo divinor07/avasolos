@@ -3,7 +3,7 @@
 {% block dashboard_content %}
 <form action="" method="post">
     {% csrf_token %}
-    <h3>Você deseja realmente cancelar a matricula desta turma?</h3>
+    <h3>Você deseja realmente cancelar a inscrição desta turma?</h3>
     <div class="pure-controls">
         <button type="submit" class="pure-button pure-button-primary">Confirmar</button>
         <a href="{% url 'turmas:announcements' turma.slug %}" class="pure-button">Voltar</a>

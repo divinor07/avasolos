@@ -19,7 +19,7 @@ def enrollment_required(view_func):
                 if enrollment.is_approved():
                     has_permission = True
                 else:
-                    message = 'A sua matricula na turma ainda está pendente'
+                    message = 'A sua inscrição no curso ainda está pendente'
         if not has_permission:
             messages.error(request, message)
             return redirect('accounts:dashboard')

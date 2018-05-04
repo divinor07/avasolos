@@ -15,8 +15,8 @@ class ContactTurma(forms.Form):
         label='Mensagem/Dúvida', widget=forms.Textarea
     )
 
-    def send_mail(self, course):
-        subject = '[%s] Contato' % course
+    def send_mail(self, turma):
+        subject = '[%s] Contato' % turma
         context = {
             'name': self.cleaned_data['name'],
             'email': self.cleaned_data['email'],
@@ -28,8 +28,8 @@ class ContactTurma(forms.Form):
         )
 
     # Envio antigo, sem o uso de template
-    # def send_mail(self, course):
-    #     subject = '[%s] Contato' % course
+    # def send_mail(self, turma):
+    #     subject = '[%s] Contato' % turma
     #     message = 'Nome: %(name)s;E-mail: %(email)s;%(message)s'
     #     context = {
     #         'name': self.cleaned_data['name'],

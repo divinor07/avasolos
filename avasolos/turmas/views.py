@@ -46,9 +46,9 @@ def enrollment(request, slug):
     )
     if created:
         # enrollment.active()
-        messages.success(request, 'Você foi matriculado na turma com sucesso')
+        messages.success(request, 'Você foi inscrito na turma com sucesso')
     else:
-        messages.info(request, 'Você já está matriculado na turma')
+        messages.info(request, 'Você já está inscrito na turma')
 
     return redirect('accounts:dashboard')
 
@@ -60,7 +60,7 @@ def undo_enrollment(request, slug):
     )
     if request.method == 'POST':
         enrollment.delete()
-        messages.success(request, 'Sua matricula foi cancelada com sucesso')
+        messages.success(request, 'Sua inscrição foi cancelada com sucesso')
         return redirect('accounts:dashboard')
     template = 'turmas/undo_enrollment.html'
     context = {

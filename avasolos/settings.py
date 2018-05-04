@@ -1,5 +1,5 @@
 """
-Django settings for simplemooc project.
+Django settings for avasolos project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -118,6 +118,6 @@ STATIC_ROOT = 'staticfiles'
 STATIC_URL = '/static/'
 
 try:
-    from simplemooc.local_settings import *
+    from avasolos.local_settings import *
 except ImportError:
     pass

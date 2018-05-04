@@ -59,8 +59,8 @@ class Lesson(models.Model):
 
     turma = models.ForeignKey(Turma, verbose_name='Turma', related_name='lessons')
 
-    created_at = models.DateTimeField('Criada em', auto_now_add=True)
-    updated_at = models.DateTimeField('Atualizada em', auto_now=True)
+    created_at = models.DateTimeField('Criado em', auto_now_add=True)
+    updated_at = models.DateTimeField('Atualizado em', auto_now=True)
 
     def __str__(self):
         return self.name
